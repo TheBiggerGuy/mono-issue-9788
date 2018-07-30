@@ -11,4 +11,4 @@ script:
   - docker build --tag="thebiggerguy/mono-issue-9788" .
   - ulimit -c unlimited
   - docker run --cap-add="SYS_PTRACE" -v "${PWD}:/tmp" thebiggerguy/mono-issue-9788
-  - cat mono-gdb-commands.*
+  - sudo cat mono-gdb-commands.*
