@@ -49,8 +49,8 @@ FROM base as builder
 RUN apt-get update
 RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends mono-devel
 
-ARG VIRTUALRADAR_VERSION
-ARG VIRTUALRADAR_HASH
+ARG VIRTUALRADAR_VERSION=c5c95e272125ac6b0b1468104001a7ff75fb45b6
+ARG VIRTUALRADAR_HASH=5a9c208c8654cf6038e40fceed7fcb717682a75de6ad75d5084403bc8ad6933d
 
 RUN curl --output VirtualRadar.tar.gz -L "https://github.com/vradarserver/vrs/archive/${VIRTUALRADAR_VERSION}.tar.gz" && \
     sha256sum VirtualRadar.tar.gz && echo "${VIRTUALRADAR_HASH}  VirtualRadar.tar.gz" | sha256sum -c
