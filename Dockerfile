@@ -59,6 +59,6 @@ RUN mkdir vrs && cd vrs && \
     tar -xvf ../VirtualRadar.tar.gz --strip-components=1
 WORKDIR vrs
 
-RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends msbuild
+RUN DEBIAN_FRONTEND=noninteractive apt-get install -y --no-install-recommends msbuild mono-runtime-dbg
 
 RUN msbuild
