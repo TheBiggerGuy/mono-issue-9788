@@ -8,4 +8,5 @@ addons:
       - docker-ce
 script:
   - docker run --rm --privileged multiarch/qemu-user-static:register
-  - docker build .       
+  - docker build --tag="thebiggerguy/mono-issue-9788" .
+  - docker run --cap-add="SYS_PTRACE" thebiggerguy/mono-issue-9788
