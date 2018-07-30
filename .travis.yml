@@ -9,4 +9,6 @@ addons:
 script:
   - docker run --rm --privileged multiarch/qemu-user-static:register
   - docker build --tag="thebiggerguy/mono-issue-9788" .
-  - docker run --cap-add="SYS_PTRACE" thebiggerguy/mono-issue-9788
+  - ulimit -c unlimited
+  - docker run --cap-add="SYS_PTRACE" -v "${PWD}:/tmp" thebiggerguy/mono-issue-9788
+  - cat mono-gdb-commands.*
