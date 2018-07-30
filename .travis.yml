@@ -7,4 +7,5 @@ addons:
     packages:
       - docker-ce
 script:
+  - docker run --rm --privileged multiarch/qemu-user-static:register
   - docker build .       
